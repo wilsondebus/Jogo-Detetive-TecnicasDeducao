@@ -1,11 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jogo Detetive</title>
+    <link rel = "style.css"/>
 </head>
 <body>
+    <main class ="app">
+
+        <section id = "tela-menu" class = "tela ativa">
+            <div class = "hero">
+                <p class = "etiqueta">Produto de Aprendizagem - Lógica para Computação</p>
+                <h1>Detetive Lógico</h1>
+                <p>
+                    Jogo realizado com base em príncipios de lógica para computação, focado exclusivamente em Técnicas Dedutivas.
+                    Siga as pistas, utilize as regras de dedução e chega a conclusão correta. 
+                </p>
+
+                <div class = "painel-status">
+                    <div>
+                        <span class = "lable">Corações</span>
+                        <strong id = "coracoes-menu" class = "coracoes"></strong>
+                    </div>
+                    <div>
+                        <span class = "label">Modo</span>
+                        <strong id = "modo-atual">Escuro</strong>
+                    </div>
+                </div>
+
+                <div id = "recarga-informacoes" class = "recarga-informacoes escondido">
+                    Sem coraçõees. Recarga em <strong id = "tempo-recarga">05:00</strong>
+                </div>
+
+                <div class = "imagem-detetive">
+                    <img src = "Imagem-Detetive-Menu.png" alt = "Imagem de um detetive Investigando" />
+                </div>
+            </div>
+        </section>
+
+        <section id = "telas-temas" class = "tela">
+            <div class = "cabecalho">
+                <button class = "botao" onclick = "voltarMenu()">←Menu</button>
+                <div>
+                    <p class = "etiqueta">Etapa 1</p>
+                    <h2>Escolha o tema para desvendar</h2>
+                    <p class = "texto-suave">O visual e a história do desafio mudam conforme o tema escolhido</p>  
+                </div> 
+            </div>
+
+            <div id = "lista-temas" class = "grade-temas"></div>
+        </section>
+
+        <section id = "tela-dificuldades" class = "tela">
+            <div class = "cabecalho">
+                <button class = "botao" onclick = "mostraTela('tela-temas')">← Temas</button>
+                <div>
+                    <p class = "etiqueta">Etapa 2</p>
+                    <h2>Escolha a dificuldade</h2>
+                    <p id = "tema-escolhido-texto" class = "texto-suave"></p>      
+                </div>
+            </div>
+
+            <div class = "grade-dificuldades">
+                <button class = "card-opcao" onclick = "selecionarDificuldade('facil')">
+                    <span class = "nivel">Fácil</span>
+                    <h3>Fundamentos de lógica</h3>
+                    <p>Proposição, conectivos, negação, conjunção, disjunção e condicional</p>
+                    <strong>10 minutos</strong>
+                </button>
+
+                <button class = "card-opcao" onclick = "selecionalDificuldade('medio')">
+                    <span class = "nivel">Médio</span>
+                    <h3>Investigação em etapas</h3>
+                    <p>O caso é narrativo e as pistas são reveladas aos poucos. Usa Modus Ponens, Modus Tollens e Silogismo Hipotético.</p>
+                    <strong>15 minutos</strong>
+                </button>
+
+                <button class = "card-opcao" onclick = "selecionalDificuldade('dificil')">
+                    <span class = "nivel">Difícil</span>
+                    <h3>Caso com combinações</h3>
+                    <p>Exige cruzar pistas, eliminar hipóteses e combinar técnicas dedutivas para resolver o mistério.</p>
+                    <strong>25 minutos</strong>
+                </button>
+            </div>
+        </section>
+
+        
+
+
+
+    </main>
     
 </body>
 </html>
