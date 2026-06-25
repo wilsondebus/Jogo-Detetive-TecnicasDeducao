@@ -259,7 +259,7 @@ Após ativar o GitHub Pages nas configurações do repositório, o jogo ficará 
 
 Projeto desenvolvido por:
 
-**Wilson Debus**
+**Wilson Debus** e
 **Henrique Hiemer**
 
 ## Considerações finais
