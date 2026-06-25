@@ -1,5 +1,7 @@
 # Detetive Lógico
 
+https://wilsondebus.github.io/Jogo-Detetive-TecnicasDeducao/
+
 ## Sobre o projeto
 
 O **Detetive Lógico** é um jogo web desenvolvido como Produto de Aprendizagem da disciplina de **Lógica para Computação**. O objetivo do projeto é aplicar, de forma prática e interativa, conteúdos relacionados à lógica proposicional e às técnicas dedutivas estudadas em aula.
