@@ -91,7 +91,7 @@ const desafios = {
       alternativas: [
         "Lucas é obrigatoriamente o culpado.",
         "Lucas não é o culpado, e Marina não entrou na biblioteca.",
-        "Marina entrou na biblioteca porque Otávio saiu antes.",
+        "Marina entrou na biblioteca porque Otávio saiu antes.",      
         "Não há nenhuma conclusão lógica possível."
       ],
       correta: 1,
