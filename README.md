@@ -253,7 +253,8 @@ Não é necessário instalar nenhum programa adicional.
 
 ## Como acessar pelo GitHub Pages
 
-O projeto também pode ser publicado pelo GitHub Pages. Para isso, os arquivos `index.html`, `style.css`, `script.js` e a pasta `imagens` precisam estar na raiz do repositório.
+O projeto foi publicado e pode ser acessado pelo link abaixo: 
+https://wilsondebus.github.io/Jogo-Detetive-TecnicasDeducao/
 
 Após ativar o GitHub Pages nas configurações do repositório, o jogo ficará disponível em um link público.
 
