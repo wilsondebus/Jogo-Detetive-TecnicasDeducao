@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detetive Lógico</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+
+    <section id="tela-menu" class="tela ativa">
+      <div class="hero">
+        <div class="hero-texto">
+          <p class="etiqueta">Produto de Aprendizagem • Lógica para Computação</p>
+          <h1>Detetive Lógico</h1>
+          <p>
+            Investigue casos, revele pistas aos poucos e use técnicas dedutivas
+            para chegar à conclusão correta.
+          </p>
+
+          <div class="painel-status">
+            <div>
+              <span class="label">Corações</span>
+              <strong id="coracoes-menu" class="coracoes"></strong>
+            </div>
+            <div>
+              <span class="label">Modo</span>
+              <strong id="modo-atual">Escuro</strong>
+            </div>
+          </div>
+
+          <div id="recarga-info" class="recarga-info escondido">
+            Sem corações. Recarga em <strong id="tempo-recarga">05:00</strong>
+          </div>
+
+          <div class="botoes-menu">
+            <button id="btn-iniciar" class="btn primario">Iniciar investigação</button>
+            <button id="btn-tema" class="btn fantasma">Tema claro / escuro</button>
+          </div>
+        </div>
+
+        <div class="hero-imagem">
+          <img src="imagens/Imagem-Detetive-Menu.png" alt="Imagem de um detetive investigando" />
+        </div>
+      </div>
+    </section>
+
+    <section id="tela-temas" class="tela">
+      <div class="cabecalho">
+        <button class="btn pequeno fantasma" onclick="voltarMenu()">← Menu</button>
+        <div>
+          <p class="etiqueta">Etapa 1</p>
+          <h2>Escolha o tema do caso</h2>
+          <p class="texto-suave">O visual e a história do desafio mudam conforme o tema escolhido.</p>
+        </div>
+      </div>
+
+      <div id="lista-temas" class="grade-temas"></div>
+    </section>
+
+    <section id="tela-dificuldades" class="tela">
+      <div class="cabecalho">
+        <button class="btn pequeno fantasma" onclick="mostrarTela('tela-temas')">← Temas</button>
+        <div>
+          <p class="etiqueta">Etapa 2</p>
+          <h2>Escolha a dificuldade</h2>
+          <p id="tema-escolhido-texto" class="texto-suave"></p>
+        </div>
+      </div>
+
+      <div class="grade-dificuldades">
+        <button class="card-opcao" onclick="selecionarDificuldade('facil')">
+          <span class="nivel">Fácil</span>
+          <h3>Fundamentos de lógica</h3>
+          <p>Proposição, conectivos, negação, conjunção, disjunção e condicional.</p>
+          <strong>10 minutos</strong>
+        </button>
+
+        <button class="card-opcao" onclick="selecionarDificuldade('medio')">
+          <span class="nivel">Médio</span>
+          <h3>Investigação em etapas</h3>
+          <p>O caso é narrativo e as pistas são reveladas aos poucos.
+             Usa Modus Ponens, Modus Tollens e Silogismo Hipotético.</p>
+          <strong>15 minutos</strong>
+        </button>
+
+        <button class="card-opcao destaque" onclick="selecionarDificuldade('dificil')">
+          <span class="nivel">Difícil</span>
+          <h3>Caso com combinações</h3>
+          <p>Exige cruzar pistas, eliminar hipóteses e combinar técnicas dedutivas para resolver o mistério.</p>
+          <strong>25 minutos</strong>
+        </button>
+      </div>
+    </section>
+
+    <section id="tela-jogo" class="tela">
+      <div class="barra-jogo">
+        <div>
+          <span class="label">Tempo restante</span>
+          <strong id="cronometro">00:00</strong>
+        </div>
+        <div>
+          <span class="label">Corações</span>
+          <strong id="coracoes-jogo" class="coracoes"></strong>
+        </div>
+        <button class="btn pequeno fantasma" onclick="confirmarSaida()">Sair</button>
+      </div>
+
+      <article class="caso">
+        <div class="caso-topo">
+          <div>
+            <p class="etiqueta" id="tema-dificuldade"></p>
+            <h2 id="titulo-caso"></h2>
+          </div>
+          <img id="imagem-caso" src="" alt="Imagem do caso" />
+        </div>
+
+        <div class="historia-box">
+          <h3>Relatório inicial</h3>
+          <p id="historia-caso"></p>
+        </div>
+
+        <div class="progresso-pistas">
+          <div class="progresso-linha">
+            <span>Progresso da investigação</span>
+            <strong id="contador-pistas">0/0 pistas</strong>
+          </div>
+          <div class="barra-progresso">
+            <div id="barra-pistas"></div>
+          </div>
+        </div>
+
+        <section class="pistas-area">
+          <h3>Pistas reveladas</h3>
+          <div id="lista-pistas" class="lista-pistas"></div>
+          <button id="btn-revelar" class="btn secundario">Revelar próxima pista</button>
+        </section>
+
+        <section id="area-pergunta" class="area-pergunta escondido">
+          <h3>Pergunta final</h3>
+          <p id="pergunta-caso"></p>
+          <div id="alternativas" class="alternativas"></div>
+        </section>
+
+        <div id="caixa-dica" class="dica escondido"></div>
+
+        <div class="acoes">
+          <button id="btn-dica" class="btn fantasma">Usar dica lógica (-1 coração)</button>
+          <button id="btn-confirmar" class="btn primario">Confirmar resposta</button>
+        </div>
+      </article>
+    </section>
+
+    <section id="tela-resultado" class="tela">
+      <div class="resultado-card">
+        <p class="etiqueta">Resultado da investigação</p>
+        <h2 id="resultado-titulo"></h2>
+        <p id="resultado-msg" class="texto-suave"></p>
+        <div id="estrelas" class="estrelas"></div>
+
+        <div class="explicacao">
+          <h3>Resolução lógica</h3>
+          <p id="resultado-resolucao"></p>
+
+          <h3>Técnica usada</h3>
+          <p id="resultado-tecnica"></p>
+        </div>
+
+        <div class="botoes-menu">
+          <button class="btn primario" onclick="mostrarTela('tela-temas')">Novo desafio</button>
+          <button class="btn fantasma" onclick="voltarMenu()">Voltar ao menu</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="rodape">
+      Desenvolvido por Wilson Debus e Henrique Hiemer
+    </footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
