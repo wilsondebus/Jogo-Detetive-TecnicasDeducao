@@ -567,7 +567,7 @@ function mostrarResultadoVitoria() {
   mostrarTela("tela-resultado");
 }
 
-function mostrarGameOver() {
+function mostrarGameOver()  {
   document.getElementById("resultado-titulo").textContent = "Game Over";
   document.getElementById("resultado-msg").textContent =
     "O tempo acabou antes da conclusão do caso. Você perdeu 1 coração.";
